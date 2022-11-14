@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>Survey</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                font-family: sans-serif;
+            }
+    
+            body {
+                margin: 0;
+            }
+    
+            nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 250px;
+                height: 100%;
+                background-color: grey;
+                padding-left: 10px;
+            }
+    
+            main {
+                margin-left: 280px;
+            }
+            
+            </style>                    <!-- I used the following link for the reference https://www.w3schools.com/js/js_validation.asp-->
+            <script>                                                        
+                function validateForm() {
+                    var x = document.forms["agam"]["name"].value;
+                    if (x == "" || x==null) {
+                        alert("Name must be filled out");
+                        return false;
+                         }
+                    } 
+            </script>
+        </head>
+    <body>
+        <nav>
+            <h2> Navigation bar</h2>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="A_books.html">Books</a></li>
+                <li><a href="A_contactus.html">Contact Us</a></li>
+                <li><a href="A_survey.html">Survey</a></li>
+            
+            </ul>
+        </nav>
+        <main>
+        <h1>Survey</h1>
+        <form action="A_survey.html" name="agam" onsubmit="return validateForm()";> 
+            <div style="padding-top: 30px; padding-left: 45px";>Name:
+                <input type="text" name="name" size="15" maxlength="30" required=""> 
+            </div>
+
+            <div style="padding-top: 30px"> Date of Birth:
+                <input type="date" name="birth" required="">
+            </div>
+
+            <div style="margin-top: 30px">How likely is <br> that you <br> recommend <br> this library to <br> your friends?
+                <input type="radio" name="satisfaction" value="Very Likely" checked="checked" /> Very Likely
+                <input type="radio" name="satisfaction" value="Somewhat Likely" checked="checked" /> Somewhat Likely
+                <input type="radio" name="satisfaction" value="Not Likely" checked="checked" /> Not Likely 
+                
+            </div>
+            <div style="padding-left: 90px; padding-top:30px";>
+                <input style="padding-right: 20px" type="submit" value="Submit" />
+            </div>
+        </form>
+        </main>
+
+    </body>
+</html>
